@@ -1,0 +1,30 @@
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    margin: auto;
+}
+
+.navMusicButtons {
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #fff;
+}
+
+#button-play img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+#button-stop img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.navMusicButtons :hover {
+    cursor: pointer;
+}

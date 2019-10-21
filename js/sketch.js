@@ -12,9 +12,12 @@ const scale = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 // Text variables
 let textCoordinates;
 let canDraw = false;
+let canListen = false;
 let drawer = undefined;
 let midiNum;
 const EXTRA_BAR_VARIANCE = 7;
+let noteList = new NoteList(0);
+
 
 var barCursor = document.getElementById("bC");
 var alphaTabSurface = document.getElementById("aTS");
@@ -57,26 +60,27 @@ function startPitch() {
 
 function modelLoaded() {
     select('#status').html('Model Loaded');
-    getPitch();
+    pitch.getPitch(getFrequency);
 }
 
-function getPitch() {
-    pitch.getPitch(function(err, frequency) {
-        if (frequency) {
-            midiNum = freqToMidi(frequency);
-            if (drawer) {
-                drawer.updateNote(midiNum);
-                //drawer.updateNote(45);
-            }
+getFrequency = function(err, frequency) {
+    if (frequency) {
+        midiNum = freqToMidi(frequency);
+        noteList.addNote(midiNum);
+        if (drawer) {
+            drawer.updateNote(noteList.average);
         }
-        getPitch(); // setup event caller
-    })
-
-    //cepstral strength - below threshold then no sound
-}
+    } else {
+        noteList.addNote(0);
+        if (drawer) {
+            drawer.updateNote(noteList.average);
+        }
+    }
+    pitch.getPitch(getFrequency);
+};
 
 function draw() {
-    if (!canDraw) {
+    if (!canDraw || !canListen) {
         return;
     }
     // sets the background color to grey
@@ -89,7 +93,7 @@ function draw() {
     let currentHeight;
     let sharpPos;
     let lineThroughPos;
-    if (midiNum && drawer) {
+    if (drawer) {
         currentHeight = drawer.noteHeight;
 
         // fills with pink
@@ -98,6 +102,12 @@ function draw() {
         posX = barCursor.getClientRects()[0].left.valueOf() + window.scrollX;
         sharpPos = [posX - 14, currentHeight + 3.5];
         ellipse(posX, currentHeight, circleSize, circleSize);
+        if (drawer.note.midiVal < 0) {
+            stroke(0);
+            line(posX - EXTRA_BAR_VARIANCE, currentHeight + EXTRA_BAR_VARIANCE, posX + EXTRA_BAR_VARIANCE, currentHeight - EXTRA_BAR_VARIANCE);
+            line(posX + EXTRA_BAR_VARIANCE, currentHeight + EXTRA_BAR_VARIANCE, posX - EXTRA_BAR_VARIANCE, currentHeight - EXTRA_BAR_VARIANCE);
+            noStroke();
+        }
         if (drawer.note.isSharp) {
             text("#", sharpPos[0], sharpPos[1]);
         }

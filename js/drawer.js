@@ -1,5 +1,5 @@
 class Drawer {
-    constructor(topLine, distanceBetweenLines, trebleOrBass) {
+    constructor(topLine, distanceBetweenLines) {
         this.topLine = topLine;
         this.distanceBetweenLines = distanceBetweenLines;
         this.firstLine = this.topLine + this.distanceBetweenLines*5;
@@ -20,6 +20,10 @@ class Drawer {
     }
 
     getHeightOfNote() {
+        if (this.note.midiVal === -1) {
+            this.noteHeight = this.firstLine;
+            return;
+        }
         let heightMod = [0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6];
         let octaveMod = this.note.octave - 4;
         let value = heightMod[this.note.midiVal % heightMod.length];
@@ -29,6 +33,10 @@ class Drawer {
     };
 
     getExtraFeatures() {
+        if (this.note.midiVal === -1) {
+            this.belowOrAbove = 0;
+            return;
+        }
         let aboveBelowMod = [1,1,1,2,2,2,2,3,3,3,4,4,4,4];
 
         let base = 0;
@@ -74,11 +82,16 @@ class Note {
     };
 
     numToNote() {
-        let letters = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-        let charPart = letters[this.midiVal % letters.length];
-        let octave = this.getOctave(this.midiVal);
+        let charPart;
+        let octave;
+        if (this.midiVal === -1) {
+            charPart = '-';
+            octave = '';
+        } else {
+            let letters = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            charPart = letters[this.midiVal % letters.length];
+            octave = this.getOctave(this.midiVal);
+        }
         return {charPart, octave};
     };
 }
-
-

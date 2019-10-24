@@ -75,6 +75,12 @@ getFrequency = function(err, frequency) {
     pitch.getPitch(getFrequency);
 };
 
+function touchStarted() {
+    if (getAudioContext().state !== 'running') {
+        getAudioContext().resume();
+    }
+}
+
 function draw() {
     if (!canDraw || !canListen) {
         return;

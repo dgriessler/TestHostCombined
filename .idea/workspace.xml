@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c204fd55-1222-4b4d-9f35-14463f3b465d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/AlphaTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/noteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/noteList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sketch.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,7 +87,7 @@
       <workItem from="1571613490855" duration="1576000" />
       <workItem from="1571683315196" duration="64000" />
       <workItem from="1571878755300" duration="65000" />
-      <workItem from="1571879065900" duration="1102000" />
+      <workItem from="1571879065900" duration="1409000" />
     </task>
     <servers />
   </component>

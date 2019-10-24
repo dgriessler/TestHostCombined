@@ -102,6 +102,28 @@
 
 <body>
 
+
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Track Selection
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <label for="t1">Track 1</label>
+      <input type="checkbox" name="Track 1" value="Track 1" id="t1" checked><br>
+      <label for="t2">Track 2</label>
+      <input type="checkbox" name="Track 2" value="Track 2" id="t2" checked><br>
+      <label for="t3">Track 3</label>
+      <input type="checkbox" name="Track 3" value="Track 3" id="t3" checked><br>
+      <label for="t4">Track 4</label>
+      <input type="checkbox" name="Track 4" value="Track 4" id="t4" checked><br>
+      <label for="t5">Track 5</label>
+      <input type="checkbox" name="Track 5" value="Track 5" id="t5" checked><br>
+      <input type="button" value="Submit" onclick="changeTracks()">
+    </div>
+  </div>
+</div>
+
 <div id="buttons">
   <button id="button-play" class="navMusicButtons">
     <img id="button-play-img" src="img/Play.png" alt="Play">
@@ -111,19 +133,6 @@
   </button>
 </div>
 <p id='status'>Loading Model...</p>
-
-<div class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div>
-</div>
 
 <div id="sketch-holder">
   <!-- Our sketch will go here! -->
@@ -137,6 +146,7 @@
 
   \track "Soprano"
   \staff {score} \tuning piano \instrument acousticgrandpiano \ks G
+  \lyrics "Oo _ _ _ _ _ _ Oo _ _ _ _ _ _ Oo _ _ _ _ _ Oo _ _"
   r.1 |
   r.2 :4 d3 e3 |
   g3{d}.2 :8 g3{-} a3 |
@@ -153,6 +163,7 @@
 
   \track "Alto"
   \staff {score} \tuning piano \instrument acousticgrandpiano \ks G
+  \lyrics "Oo _ _ _ _ Oo _ _ _ _ _ _ Oo _ _ _ _ Oo _ _ _"
   r.1 |
   r.2 :4 d4 e4 |
   g4.1 |
@@ -169,6 +180,7 @@
 
   \track "Tenor"
   \staff {score} \tuning piano \instrument acousticgrandpiano \ks G \clef F4
+  \lyrics "Oo _ _ _ Oo _ _"
   :1 r | r | r | r | \ts 2 4 r.2 | \ts 4 4 :1 r | r |
   \ts 2 4 :4 d4 c4 |
   \ts 4 4 b3.1 |
@@ -179,6 +191,7 @@
 
   \track "Bass"
   \staff {score} \tuning piano \instrument acousticgrandpiano \ks G \clef F4
+  \lyrics "Oo _ _ _ _ Oo _ _ _"
   :1 r | r | r | r | \ts 2 4 r.2 | \ts 4 4 :1 r | r | \ts 2 4 r.2 |
   \ts 4 4 :4 g3 f3 e3 d3 |
   c#3.2 :4 c3 d3 |
@@ -202,57 +215,64 @@
   \tempo 88
   \ts 12 8 (a5{d} b5{d} d6{d}).2 a4{d}.2 |
 
+  \staff {score} \tuning piano \instrument acousticgrandpiano \ks G
+  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |
+  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |
+  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |
+  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |
+  \ts 2 4 f4.2 |
+  \ts 4 4 r.8 :16 g5 a5 :8 d5 e5 e5{-}.2 |
+  r.8 :16 a5 b5 :8 d5 e5 e5{-} a5 d6.4 |
+  \ts 2 4 d6{-}.2 |
+  \ts 4 4 r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |
+  r.1 |
+  r.1 |
+  \tempo 88
+  \ts 12 8 :8 g2 d3 g3 a3 b3 d4 a4 d4 b3 a3 g3 d3 |
+
+
+  \staff {score} \tuning piano \instrument acousticgrandpiano \ks G
+  :1 (d4 g4) |
+  :1 (d4 g4) |
+  :1 (d4 g4) |
+  :1 (d4 g4) |
+  \ts 2 4 :2 (d4{-} g4{-}) |
+  \ts 4 4 :1 (e4 g4) |
+  :1 (c4 d4 g4) |
+  \ts 2 4 d4.2 |
+  \ts 4 4 :2 (d4 g4) (e4 g4) |
+  :16 b3 c#4 e4 g4 g4{-}.4 :16 a3 c4 d4 e4 :8 f#4 d4 |
+  :16 ab3 c4 eb4 g4 (ab3{- d} c4{- d} eb4{- d} g4{- d}).2 |
+  \tempo 88
+  \clef F4
+  \ts 12 8 :1 g2{d} |
+
 </div>
 
-<!--  \track "Piano Upper"-->
-<!--  \staff {score} \tuning piano \instrument acousticgrandpiano \ks G-->
-<!--  r.8 d6{d}.4 d6{-}.2 |-->
-<!--  r.8 d6{d}.4 d6{-}.2 |-->
-<!--  r.8 d6{d}.4 d6{-}.2 |-->
-<!--  r.8 :4 d6{d} d6{-} :4 (e6 b6) |-->
-<!--  \ts 2 4 :4 d5 a4{-} |-->
-<!--  \ts 4 4 r.8 d6{d}.4 d6{-}.2 |-->
-<!--  r.8 d6{d}.4 d6{-}.2 |-->
-<!--  \ts 2 4 d6{-}.2 |-->
-<!--  \ts 4 4 r.8 d6{d}.4 d6{-}.2 |-->
-<!--  r.4 :16 a4 b4 c#5 e5 f#5.4 :16 a4 c5 e5 f#5 |-->
-<!--  g5.4 :16 ab4 bb4 c5 eb5 :8{tu 3} f5 g5 ab5 :8{tu 3} bb5 c6 eb6 |-->
-<!--  \tempo 88-->
-<!--  \ts 12 8 (a5{d} b5{d} d6{d}).2 a4{d}.2 |-->
-
-<!--  \staff {score} \tuning piano \instrument acousticgrandpiano \ks G-->
-<!--  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |-->
-<!--  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |-->
-<!--  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |-->
-<!--  r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |-->
-<!--  \ts 2 4 f4.2 |-->
-<!--  \ts 4 4 r.8 :16 g5 a5 :8 d5 e5 e5{-}.2 |-->
-<!--  r.8 :16 a5 b5 :8 d5 e5 e5{-} a5 d6.4 |-->
-<!--  \ts 2 4 d6{-}.2 |-->
-<!--  \ts 4 4 r.8 :16 g5 a5 :8 f#5 d5 d5{-}.2 |-->
-<!--  r.1 |-->
-<!--  r.1 |-->
-<!--  \tempo 88-->
-<!--  \ts 12 8 :8 g2 d3 g3 a3 b3 d4 a4 d4 b3 a3 g3 d3 |-->
-
-
-<!--  \staff {score} \tuning piano \instrument acousticgrandpiano \ks G-->
-<!--  :1 (d4 g4) |-->
-<!--  :1 (d4 g4) |-->
-<!--  :1 (d4 g4) |-->
-<!--  :1 (d4 g4) |-->
-<!--  \ts 2 4 :2 (d4{-} g4{-}) |-->
-<!--  \ts 4 4 :1 (e4 g4) |-->
-<!--  :1 (c4 d4 g4) |-->
-<!--  \ts 2 4 d4.2 |-->
-<!--  \ts 4 4 :2 (d4 g4) (e4 g4) |-->
-<!--  :16 b3 c#4 e4 g4 g4{-}.4 :16 a3 c4 d4 e4 :8 f#4 d4 |-->
-<!--  :16 ab3 c4 eb4 g4 (ab3{- d} c4{- d} eb4{- d} g4{- d}).2 |-->
-<!--  \tempo 88-->
-<!--  \clef F4-->
-<!--  \ts 12 8 :1 g2{d} |-->
-
 <script type="text/javascript">
+  changeTracks = function() {
+    let newTrackList = [];
+    let newTrackIndexes = [];
+    for(let i = 1; i < 6; i++) {
+      if (document.getElementById("t" + i).checked) {
+        newTrackList.push(api.score.tracks[i-1]);
+        newTrackIndexes.push(i-1);
+      }
+    }
+    if (newTrackList.length !== 0) {
+      api.renderTracks(newTrackList);
+      currentTracks = newTrackIndexes;
+    } else {
+      for (let i = 0; i < currentTracks.length; i++) {
+        let trackIndex = currentTracks[i] + 1;
+        document.getElementById("t" + trackIndex).checked = true;
+      }
+    }
+  };
+
+  // fix labelling of topLine when tracks are reloaded
+
+  let currentTracks = [0,1,2,3,4];
   var settings = {
     player: 'default.sf2',
     cursor: true,

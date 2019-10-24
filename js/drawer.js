@@ -95,3 +95,5 @@ class Note {
         return {charPart, octave};
     };
 }
+
+

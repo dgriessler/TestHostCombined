@@ -25,6 +25,10 @@
     border-radius: 50%;
 }
 
+#sketch-holder {
+    position: relative;
+}
+
 .navMusicButtons :hover {
     cursor: pointer;
 }
@@ -65,7 +69,7 @@
 }
 
 /* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar input:hover, .dropdown:hover .dropbtn {
     background-color: red;
 }
 
@@ -80,7 +84,7 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content input {
     float: none;
     color: black;
     padding: 12px 16px;
@@ -90,7 +94,7 @@
 }
 
 /* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content input:hover {
     background-color: #ddd;
 }
 

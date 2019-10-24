@@ -22,8 +22,8 @@ class NoteList {
         if (this.average < MINIMUM_MIDI_VALUE) {
             this.average = -1;
         }
-        if (this.average < 48 && this.average > 0) {
-            console.log(this.elements);
-        }
+        // if (this.average < 48 && this.average > 0) {
+        //     console.log(this.elements);
+        // }
     }
 }

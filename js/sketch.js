@@ -33,7 +33,9 @@ function setupCanvas() {
         return;
     }
     canvas = createCanvas(alphaTabSurface.clientWidth, alphaTabSurface.clientHeight);
-    centerCanvas();
+    const x = 0;
+    const y = 0;
+    canvas.position(x, y);
     canvas.parent('sketch-holder');
     textCoordinates = [width / 2, 30];
     canDraw = true;
@@ -45,14 +47,8 @@ api.addPostRenderFinished(function() {
     const topLineHeight = topLine.y.animVal.value;
     const nextLine = document.getElementById("rect_1");
     const distanceBetweenLines = (nextLine.y.animVal.value - topLineHeight);
-    drawer = new Drawer(topLineHeight + distanceBetweenLines/2, distanceBetweenLines);
+    drawer = new Drawer(topLineHeight + 1, distanceBetweenLines);
 });
-
-function centerCanvas() {
-    var x = 0;
-    var y = 100;
-    canvas.position(x, y);
-}
 
 function startPitch() {
     pitch = ml5.pitchDetection('js/model/', audioContext, mic.stream, modelLoaded);
@@ -85,8 +81,8 @@ function draw() {
     }
     // sets the background color to grey
     //background(255, 255, 255, 1);
-    //background(140);
-    background(255);
+    background(140);
+    //background(255);
     // dont draw the outline of the shape, note: you need to turn stroke on to draw lines as we do below.
     noStroke();
 

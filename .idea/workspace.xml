@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c204fd55-1222-4b4d-9f35-14463f3b465d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/AlphaTab/runAlphaTab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/AlphaTab/startAlphaTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AlphaTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/AlphaTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AlphaTab.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/AlphaTab.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Font/Bravura.eot" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/Font/Bravura.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Font/Bravura.otf" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/Font/Bravura.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Font/Bravura.svg" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/Font/Bravura.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Font/Bravura.woff" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/Font/Bravura.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Drawing/drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/buttonManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-2.2.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/jquery-2.2.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.alphaTab.drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/jquery.alphaTab.drop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/noteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Drawing/noteList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Drawing/sketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/swfobject.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/swfobject.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +44,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/js/AlphaTab.js" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fiddl\OneDrive\Documents\Senior Design\Combined\js" />
+      <recent name="C:\Users\fiddl\OneDrive\Documents\Senior Design\Combined\js\Drawing" />
+      <recent name="C:\Users\fiddl\OneDrive\Documents\Senior Design\Combined\js\AlphaTab" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -89,6 +112,8 @@
       <workItem from="1571878755300" duration="65000" />
       <workItem from="1571879065900" duration="1492000" />
       <workItem from="1571881083943" duration="103000" />
+      <workItem from="1572182046573" duration="4797000" />
+      <workItem from="1572828620267" duration="3648000" />
     </task>
     <servers />
   </component>

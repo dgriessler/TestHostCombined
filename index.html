@@ -10,11 +10,11 @@
   <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/AlphaTab/jquery-2.2.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-sticky-kit@1.1.3/dist/sticky-kit.min.js"></script>
-  <script src="js/swfobject.js"></script>
-  <script src="js/AlphaTab.js"></script>
+  <script src="js/AlphaTab/swfobject.js"></script>
+  <script src="js/AlphaTab/AlphaTab.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
@@ -245,91 +245,12 @@
 
 </div>
 
-<script type="text/javascript">
-  changeTracks = function() {
-    let newTrackList = [];
-    let newTrackIndexes = [];
-    for(let i = 1; i < 6; i++) {
-      if (document.getElementById("t" + i).checked) {
-        newTrackList.push(api.score.tracks[i-1]);
-        newTrackIndexes.push(i-1);
-      }
-    }
-    if (newTrackList.length !== 0) {
-      api.renderTracks(newTrackList);
-      currentTracks = newTrackIndexes;
-    } else {
-      for (let i = 0; i < currentTracks.length; i++) {
-        let trackIndex = currentTracks[i] + 1;
-        document.getElementById("t" + trackIndex).checked = true;
-      }
-    }
-  };
-
-  // fix labelling of topLine when tracks are reloaded
-
-  let currentTracks = [0,1,2,3,4];
-  var settings = {
-    player: 'default.sf2',
-    cursor: true,
-    tracks: [0,1,2,3,4],
-    //logging: 'debug',
-    layout: 'horizontal',
-  };
-
-  var api = new alphaTab.platform.javaScript.AlphaTabApi(document.querySelector('#alphaTab'), settings);
-  // api.changeTrackSolo([1], true);
-  //api.changeTrackMute([0,1,2,3], true);
-  //console.log(api);
-
-  /*  api.renderTracks([
-    api.score.tracks[0],
-    api.score.tracks[1]
-]);*/
-  api.set_metronomeVolume(0);
-  const playButton = document.querySelector("#button-play");
-  const stopButton = document.querySelector("#button-stop");
-  playButton.addEventListener("click", event => {
-    api.playPause();
-    if (event.target.src.endsWith("img/Play.png")) {
-      event.target.src = "img/Pause.png";
-    } else {
-      event.target.src = "img/Play.png";
-    }
-
-  });
-
-  stopButton.addEventListener("click", event => {
-    api.stop();
-    document.querySelector("#button-play-img").src = "img/Play.png";
-  });
-
-  document.addEventListener("alphaTab.playerStateChanged", event => {
-    document.querySelector("#button-play-img").src = "img/Play.png";
-  });
-
-  var at = $('#alphaTab');
-  at.alphaTab();
-  at.on('alphaTab.playerStateChanged', function() {
-    if (api.playerState !== 1) {
-      canListen = false;
-      background(255);
-      document.querySelector("#button-play-img").src = "img/Play.png";
-    } else {
-      canListen = true;
-    }
-  });
-
-</script>
-
-<!-- Play On Load:
-api.addReadyForPlayback(function() {
-  api.play();
-});
--->
-<script src="js/noteList.js"></script>
-<script src="js/sketch.js"></script>
-<script src="js/drawer.js"></script>
+<script src="js/AlphaTab/buttonManagement.js"></script>
+<script src="js/AlphaTab/runAlphaTab.js"></script>
+<script src="js/AlphaTab/startAlphaTab.js"></script>
+<script src="js/Drawing/noteList.js"></script>
+<script src="js/Drawing/sketch.js"></script>
+<script src="js/Drawing/drawer.js"></script>
 </body>
 
 </html>

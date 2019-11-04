@@ -43,6 +43,8 @@ function setupCanvas() {
 
 api.addPostRenderFinished(function() {
     setupCanvas();
+    // TODO: Get this from the database and base it on what part is being sung for
+    noteList.updateBounds(55,82);
     const topLine = document.getElementById("rect_0");
     const topLineHeight = topLine.y.animVal.value;
     const nextLine = document.getElementById("rect_1");

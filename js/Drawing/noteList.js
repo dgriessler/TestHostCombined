@@ -1,4 +1,4 @@
-const MAX_SIZE = 5;
+const MAX_SIZE = 3;
 const MINIMUM_MIDI_VALUE = 20;
 
 class NoteList {
@@ -7,9 +7,12 @@ class NoteList {
         this.pointer = 0;
         this.total = element;
         this.average = element;
+        this.lowerPitchBound = 21;
+        this.upperPitchBound = 127;
     }
 
     addNote(element) {
+
         if (this.elements.length < MAX_SIZE) {
             this.elements.push(element);
         } else {
@@ -19,11 +22,14 @@ class NoteList {
         }
         this.total += element;
         this.average = Math.floor(this.total / this.elements.length);
-        if (this.average < MINIMUM_MIDI_VALUE) {
+
+        if (this.average < MINIMUM_MIDI_VALUE || this.average < this.lowerPitchBound || this.average > this.upperPitchBound) {
             this.average = -1;
         }
-        // if (this.average < 48 && this.average > 0) {
-        //     console.log(this.elements);
-        // }
+    }
+
+    updateBounds(lowerBound, upperBound) {
+        this.lowerPitchBound = lowerBound;
+        this.upperPitchBound = upperBound;
     }
 }

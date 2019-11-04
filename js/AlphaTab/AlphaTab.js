@@ -33502,6 +33502,7 @@
             this.buildBoundingsLookup(cx,cy);
             var i = 0;
             var j = this._allStaves.length;
+            canvas.rectIndex = 0;
             while(i < j) {
                 this._allStaves[i].paint(cx,cy,canvas,startIndex,count);
                 ++i;

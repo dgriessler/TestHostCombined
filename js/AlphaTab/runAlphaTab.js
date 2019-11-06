@@ -41,15 +41,5 @@ class AlphaTabAPIUtility {
             }
         }
     };
-
-    handlePlayerStateChanged() {
-        if (this.api.playerState !== 1) {
-            canListen = false;
-            background(255);
-            document.querySelector("#button-play-img").src = "img/Play.png";
-        } else {
-            canListen = true;
-        }
-    }
 }
 

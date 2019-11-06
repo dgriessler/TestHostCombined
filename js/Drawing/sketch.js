@@ -1,8 +1,4 @@
 // Pitch variables
-let crepe;
-const voiceLow = 100;
-const voiceHigh = 500;
-let audioStream;
 let canvas;
 
 // Circle variables
@@ -17,10 +13,13 @@ let drawer = undefined;
 let midiNum;
 const EXTRA_BAR_VARIANCE = 7;
 let noteList = new NoteList(0);
+let audioContext;
+let mic;
+let pitch;
 
 
-var barCursor = document.getElementById("bC");
-var alphaTabSurface = document.getElementById("aTS");
+let barCursor = document.getElementById("bC");
+let alphaTabSurface = document.getElementById("aTS");
 
 function setup() {
     audioContext = getAudioContext();
@@ -41,7 +40,7 @@ function setupCanvas() {
     canDraw = true;
 }
 
-api.addPostRenderFinished(function() {
+AlphaTabRunner.api.addPostRenderFinished(function() {
     setupCanvas();
     // TODO: Get this from the database and base it on what part is being sung for
     noteList.updateBounds(55,82);
@@ -50,6 +49,16 @@ api.addPostRenderFinished(function() {
     const nextLine = document.getElementById("rect_1");
     const distanceBetweenLines = (nextLine.y.animVal.value - topLineHeight);
     drawer = new Drawer(topLineHeight + 1, distanceBetweenLines);
+});
+
+AlphaTabRunner.api.addPlayerStateChanged(() => {
+    if (AlphaTabRunner.api.playerState !== 1) {
+        canListen = false;
+        background(255);
+        document.querySelector("#button-play-img").src = "img/Play.png";
+    } else {
+        canListen = true;
+    }
 });
 
 function startPitch() {
@@ -96,14 +105,13 @@ function draw() {
 
     let currentHeight;
     let sharpPos;
-    let lineThroughPos;
     if (drawer) {
         currentHeight = drawer.noteHeight;
 
         // fills with pink
         fill(255, 0, 255);
         // draws ellipse //barCursor.getClientRects()[0].left.valueOf();
-        posX = barCursor.getClientRects()[0].left.valueOf() + window.scrollX;
+        let posX = barCursor.getClientRects()[0].left.valueOf() + window.scrollX;
         sharpPos = [posX - 14, currentHeight + 3.5];
         ellipse(posX, currentHeight, circleSize, circleSize);
         if (drawer.note.midiVal < 0) {
@@ -134,6 +142,6 @@ function draw() {
         // fills with white
         fill(255);
         // draws text
-        text(drawer.note.charPart + " " + drawer.note.octave, posX - 5, height / 2);
+        //text(drawer.note.charPart + " " + drawer.note.octave, posX - 5, height / 2);
     }
 }

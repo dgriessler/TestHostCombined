@@ -4,7 +4,11 @@
     <list default="true" id="c204fd55-1222-4b4d-9f35-14463f3b465d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/AlphaTab/AlphaTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/AlphaTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AlphaTab/buttonManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/buttonManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AlphaTab/runAlphaTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/runAlphaTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AlphaTab/startAlphaTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AlphaTab/startAlphaTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Drawing/noteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Drawing/noteList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Drawing/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Drawing/sketch.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="MP-69" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SCNqXsEoKBHCs7lk1IqgsaDwPZ" />
@@ -100,6 +109,9 @@
       <workItem from="1571881083943" duration="103000" />
       <workItem from="1572182046573" duration="4797000" />
       <workItem from="1572828620267" duration="5472000" />
+      <workItem from="1573064671156" duration="67000" />
+      <workItem from="1573064952067" duration="4404000" />
+      <workItem from="1573080611771" duration="2464000" />
     </task>
     <servers />
   </component>

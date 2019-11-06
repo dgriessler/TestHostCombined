@@ -6,7 +6,7 @@ const stopButton = document.querySelector("#button-stop");
  */
 playButton.addEventListener("click", event => {
     // plays the music if paused and pauses it if played
-    api.playPause();
+    AlphaTabRunner.api.playPause();
 
     // If the play picture, then change to pause picture and vice versa
     if (event.target.src.endsWith("img/Play.png")) {
@@ -21,6 +21,6 @@ playButton.addEventListener("click", event => {
  * Listen for when the stop button is pressed and stop the music and change to a play image for the other button
  */
 stopButton.addEventListener("click", event => {
-    api.stop();
+    AlphaTabRunner.api.stop();
     document.querySelector("#button-play-img").src = "img/Play.png";
 });

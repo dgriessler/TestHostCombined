@@ -1,5 +1,4 @@
 const MAX_SIZE = 3;
-const MINIMUM_MIDI_VALUE = 20;
 
 class NoteList {
     constructor (element) {
@@ -23,7 +22,7 @@ class NoteList {
         this.total += element;
         this.average = Math.floor(this.total / this.elements.length);
 
-        if (this.average < MINIMUM_MIDI_VALUE || this.average < this.lowerPitchBound || this.average > this.upperPitchBound) {
+        if (element === 0 || this.average < this.lowerPitchBound || this.average > this.upperPitchBound) {
             this.average = -1;
         }
     }

@@ -62,7 +62,11 @@ AlphaTabRunner.api.addPlayerStateChanged(() => {
 });
 
 function startPitch() {
-    pitch = ml5.pitchDetection('js/model/', audioContext, mic.stream, modelLoaded);
+    ml5.pitchDetection('js/model/', audioContext, mic.stream).ready.then(model => {
+        select('#status').html('Model Loaded');
+        pitch = model;
+        pitch.getPitch(getFrequency);
+    });
 }
 
 function modelLoaded() {
